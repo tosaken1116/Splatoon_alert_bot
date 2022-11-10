@@ -8,6 +8,7 @@ from discord.ext import tasks
 from dotenv import load_dotenv
 
 from get_splatoon_schedule import Splatoon
+from pull_repository import pull_from_master
 
 load_dotenv()
 CHANNEL_ID=os.getenv('CHANNEL_ID')
@@ -16,6 +17,7 @@ EMOJI_ASARI=os.getenv('EMOJI_ASARI')
 EMOJI_AREA=os.getenv('EMOJI_AREA')
 EMOJI_YAGURA=os.getenv('EMOJI_YAGURA')
 if __name__=="__main__":
+    pull_from_master()
     while(1):
         now = datetime.now()
         # if 1:
